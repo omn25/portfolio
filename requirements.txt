@@ -1,0 +1,22 @@
+fastapi
+uvicorn[standard]
+
+# LangChain core + integrations
+langchain
+langchain-community
+langchain-core
+langchainhub
+langchain-ollama
+langchain_ollama
+langchain-openai
+openai
+
+# Vector DB + Embeddings
+qdrant-client
+langchain-qdrant
+langchain-huggingface
+sentence-transformers
+huggingface-hub
+
+# Env & CORS
+python-dotenv
