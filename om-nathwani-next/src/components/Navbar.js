@@ -1,6 +1,21 @@
 'use client';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -16,6 +31,9 @@ const Navbar = () => {
             if (sectionId === 'home') {
                 window.dispatchEvent(new CustomEvent('homeClick'));
             }
+
+            // Close mobile menu after clicking
+            setIsMenuOpen(false);
         }
     };
 
@@ -38,7 +56,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="fixed top-0 left-0 right-0 w-full flex justify-between items-center px-12 py-6 bg-transparent backdrop-blur-sm z-50">
+        <nav className="fixed top-0 left-0 right-0 w-full flex justify-between items-center px-4 md:px-12 py-6 bg-transparent backdrop-blur-sm z-50">
             {/* Left side */}
             <button
                 onClick={() => scrollToSection('home')}
@@ -47,27 +65,67 @@ const Navbar = () => {
                 Home
             </button>
 
-            {/* Right side */}
-            <div className="flex items-center space-x-12">
+            {/* Mobile Menu Button */}
+            {isMobile && (
                 <button
-                    onClick={() => scrollToSection('about')}
-                    className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="text-white p-2 focus:outline-none"
                 >
-                    Introduction
+                    <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+                    <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+                    <div className="w-6 h-0.5 bg-white"></div>
                 </button>
-                <button
-                    onClick={() => scrollToSection('experience')}
-                    className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
-                >
-                    Experience
-                </button>
-                <button
-                    onClick={() => scrollToSection('projects')}
-                    className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
-                >
-                    Projects
-                </button>
-            </div>
+            )}
+
+            {/* Desktop Navigation */}
+            {!isMobile && (
+                <div className="flex items-center space-x-12">
+                    <button
+                        onClick={() => scrollToSection('about')}
+                        className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+                    >
+                        Introduction
+                    </button>
+                    <button
+                        onClick={() => scrollToSection('experience')}
+                        className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+                    >
+                        Experience
+                    </button>
+                    <button
+                        onClick={() => scrollToSection('projects')}
+                        className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+                    >
+                        Projects
+                    </button>
+                </div>
+            )}
+
+            {/* Mobile Menu */}
+            {isMobile && isMenuOpen && (
+                <div className="absolute top-full left-0 right-0 bg-black/90 backdrop-blur-sm py-4 animate-fade-in">
+                    <div className="flex flex-col items-center space-y-4">
+                        <button
+                            onClick={() => scrollToSection('about')}
+                            className="text-white text-lg font-medium hover:text-gray-300 transition-colors w-full text-center py-2"
+                        >
+                            Introduction
+                        </button>
+                        <button
+                            onClick={() => scrollToSection('experience')}
+                            className="text-white text-lg font-medium hover:text-gray-300 transition-colors w-full text-center py-2"
+                        >
+                            Experience
+                        </button>
+                        <button
+                            onClick={() => scrollToSection('projects')}
+                            className="text-white text-lg font-medium hover:text-gray-300 transition-colors w-full text-center py-2"
+                        >
+                            Projects
+                        </button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };

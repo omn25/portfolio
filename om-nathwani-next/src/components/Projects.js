@@ -30,11 +30,11 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="min-h-screen flex items-center justify-center p-8">
+        <section id="projects" className="min-h-screen flex items-center justify-center p-4 md:p-8">
             <div className="max-w-6xl w-full">
-                <h1 className="text-5xl font-light text-white mb-12">Projects</h1>
+                <h1 className="text-4xl md:text-5xl font-light text-white mb-8 md:mb-12">Projects</h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {projects.map((project, index) => (
                         <Link
                             href={project.link}
@@ -43,42 +43,40 @@ const Projects = () => {
                             rel="noopener noreferrer"
                             className="block group"
                         >
-                            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-8 h-full border border-transparent 
+                            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 md:p-8 h-full border border-transparent 
                                           hover:border-white/20 transition-all duration-300 relative">
-                                <h2 className="text-2xl font-light text-white mb-4">{project.title}</h2>
-                                <p className="text-gray-300/90 mb-6 font-light">{project.description}</p>
-                                <div className="space-y-4">
-                                    <div>
-                                        <p className="text-sm text-white/60 font-light mb-2">Technologies:</p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.technologies.map((tech, techIndex) => (
-                                                <span
-                                                    key={techIndex}
-                                                    className="text-sm text-white/80 bg-white/5 px-3 py-1 rounded-full font-light"
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <div className="flex items-center text-white/60 group-hover:text-white/90 transition-colors">
-                                            <span className="mr-2">Explore More</span>
-                                            <svg
-                                                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
+                                <h2 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4">{project.title}</h2>
+                                <p className="text-sm md:text-base text-gray-300/90 mb-4 md:mb-6 font-light">{project.description}</p>
+
+                                <div>
+                                    <p className="text-xs md:text-sm text-white/60 font-light mb-2">Technologies:</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.technologies.map((tech, techIndex) => (
+                                            <span
+                                                key={techIndex}
+                                                className="text-xs md:text-sm text-white/80 bg-white/5 px-2 md:px-3 py-1 rounded-full font-light"
                                             >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                                />
-                                            </svg>
-                                        </div>
+                                                {tech}
+                                            </span>
+                                        ))}
                                     </div>
+                                </div>
+
+                                <div className="flex items-center text-white/60 group-hover:text-white/90 transition-colors mt-4">
+                                    <span className="text-sm md:text-base mr-2">Explore More</span>
+                                    <svg
+                                        className="w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                        />
+                                    </svg>
                                 </div>
                             </div>
                         </Link>

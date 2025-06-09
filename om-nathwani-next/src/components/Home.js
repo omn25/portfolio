@@ -35,8 +35,8 @@ export default function HomeContent() {
     return (
         <div className="min-h-screen w-full flex items-center justify-center relative z-10">
             <div className="max-w-3xl mx-auto w-full px-4 text-center">
-                <p className="text-gray-400 text-sm mb-4">Toronto, Ontario</p>
-                <h1 className="text-4xl font-bold text-white mb-6">
+                <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">Toronto, Ontario</p>
+                <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                     <TypeAnimation
                         key={key}
                         sequence={[
@@ -55,14 +55,14 @@ export default function HomeContent() {
                     />
                 </h1>
 
-                <div className="flex justify-center items-center space-x-8 mb-8">
+                <div className="flex justify-center items-center space-x-6 md:space-x-8 mb-6 md:mb-8">
                     <Link
                         href="mailto:omnathwani@gmail.com"
                         className="text-white hover:text-white/60 transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <MdEmail className="w-8 h-8" />
+                        <MdEmail className="w-6 h-6 md:w-8 md:h-8" />
                     </Link>
                     <Link
                         href="https://www.linkedin.com/in/om-nathwani-3903b2314/?originalSubdomain=ca"
@@ -70,7 +70,7 @@ export default function HomeContent() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaLinkedin className="w-8 h-8" />
+                        <FaLinkedin className="w-6 h-6 md:w-8 md:h-8" />
                     </Link>
                     <Link
                         href="https://x.com/om_n25"
@@ -78,7 +78,7 @@ export default function HomeContent() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <RiTwitterXFill className="w-8 h-8" />
+                        <RiTwitterXFill className="w-6 h-6 md:w-8 md:h-8" />
                     </Link>
                     <Link
                         href="https://github.com/omn25"
@@ -86,7 +86,7 @@ export default function HomeContent() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaGithub className="w-8 h-8" />
+                        <FaGithub className="w-6 h-6 md:w-8 md:h-8" />
                     </Link>
                 </div>
 
@@ -94,11 +94,11 @@ export default function HomeContent() {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-6 py-2 rounded-full 
+                    className="inline-block px-4 md:px-6 py-2 rounded-full 
                              bg-gradient-to-r from-white/10 to-white/5
                              hover:from-white/20 hover:to-white/10
                              border border-white/10 backdrop-blur-sm
-                             text-white text-base font-light
+                             text-white text-sm md:text-base font-light
                              transition-all duration-300 ease-out
                              hover:border-white/20 hover:scale-102"
                 >
