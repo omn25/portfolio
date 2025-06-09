@@ -72,11 +72,11 @@ const ChatButton = () => {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50">
             <div className={`
                 transform transition-all duration-300 ease-in-out origin-bottom-right
                 ${isExpanded
-                    ? 'scale-100 w-[320px] h-[400px] bg-black/90 backdrop-blur-md rounded-xl shadow-xl'
+                    ? 'scale-100 w-[300px] md:w-[320px] h-[400px] bg-black/90 backdrop-blur-md rounded-xl shadow-xl'
                     : 'scale-0 w-0 h-0'
                 }
             `}>
@@ -165,13 +165,14 @@ const ChatButton = () => {
             <button
                 onClick={toggleChat}
                 className={`
-                    flex items-center gap-2 bg-black/90 backdrop-blur-sm rounded-full px-4 py-2.5
+                    flex items-center gap-2 bg-black/90 backdrop-blur-sm rounded-full 
                     shadow-lg hover:bg-black transition-colors
                     ${isExpanded ? 'opacity-0' : 'opacity-100'}
+                    ${!isExpanded ? 'p-2 md:px-4 md:py-2.5' : ''}
                 `}
             >
                 <FaRegCommentDots className="w-4 h-4 text-white" />
-                <span className="text-white text-sm font-light">Chat with Me</span>
+                <span className="hidden md:inline text-white text-sm font-light">Chat with Me</span>
             </button>
         </div>
     );
