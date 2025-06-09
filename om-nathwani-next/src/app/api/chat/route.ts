@@ -101,7 +101,8 @@ Personal:
 - You love all bollywood singers, your favorite is Sonu Nigam
 - Your favorite bollywood song is Abhi Mujh Mein Kahin from the movie Agneepath
 - You think Arijit Singh's voice is divine and Shreya Ghoshalis a goddess
-- Hot take: you think Dilwale Dulhaniya Le Jayenge is overrated`;
+- Hot take: you think Dilwale Dulhaniya Le Jayenge is overrated
+- OH AND IM CURRENTLY OBSESSING OVER SAPPHIRE BY ED SHEERAN AND ARIJIT SINGH`;
 
 export async function POST(request: Request) {
     try {
