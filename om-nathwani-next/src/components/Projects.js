@@ -4,16 +4,16 @@ import Link from 'next/link';
 const Projects = () => {
     const projects = [
         {
+    title: "Bollyguess",
+    description: "A daily Bollywood song guessing game featuring randomized audio clips and live leaderboards, built to scale and deployed publicly.",
+    technologies: ["Next.js", "React", "TailwindCSS", "Node.js", "PostgreSQL", "Supabase", "Python", "Docker", "GitHub Actions", "Vercel"],
+    link: "https://www.bollyguess.ca/",
+        },
+        {
             title: "LearnETF",
             description: "AI-powered financial literacy platform that helps young adults build the confidence to invest.",
             technologies: ["Python", "Plotly", "Pandas", "NumPy", "Yfinance", "React.js", "Flask", "OpenAI API"],
             link: "https://github.com/akramj13/learnetf",
-        },
-        {
-            title: "Insurance Claim Helper",
-            description: "AI assistant that helps users file insurance claims based on their specific policy details.",
-            technologies: ["Flask", "Python", "AWS", "OpenAI API"],
-            link: "https://github.com/liyuxiao2/Insurify",
         },
         {
             title: "RaceSmart",
