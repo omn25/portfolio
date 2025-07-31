@@ -80,10 +80,33 @@ Projects:
 - Uses AWS S3 for image storage
 - Link: race-smart.streamlit.app
 
-4. Music Transcriber (2024)
+4. Music Transcriber (2025)
 - Converts audio to sheet music
 - Tech: Python, Librosa, Music21, Streamlit
 - Link: github.com/omn25/musictranscriber
+
+5. BollyGuess (2025)
+• Launched a daily Bollywood song guessing game using Vercel by building and promoting the app through social channels, hitting
+over 200+ plays in the first week.
+• Wrote data cleaning and seeding scripts in Node.js, to scale PostgreSQL database with 2,400+ songs and 7,500+ artists.
+• Randomized daily games using Python and many-to-many logic in PostgreSQL, which delivered fresh gameplay every day.
+• Displayed daily leaderboards by tracking scores in Supabase and connecting it through Next.js API routes, which encouraged
+competition.
+• Created a smooth and responsive gameplay experience using Next.js, TailwindCSS, React Hot Toast, and Lucide React, for
+styling, feedback, and UI components.
+• Set up automated daily updates, eliminating manual work post-launch, using GitHub Actions and cron jobs.
+- Link: https://www.bollyguess.ca/
+
+6. Audio Segment Classifier (2025)
+• Trained a 4-layer feedforward neural network with a final sigmoid output using PyTorch to dynamically label clips as good
+(1) or bad (0) for a user to guess a full song from it, automating ideal segment selection.
+• Extracted features like MFCCs, chroma, tempo, and pitch using Librosa by building a preprocessing pipeline, which gave the
+model reliable input vectors.
+• Validated performance with an 85% F1-score and confusion matrix by testing against labeled data, confirming readiness.
+• Ran the classifier on 2,400+ segments by integrating it with Bollyguess, improving Bollyguess’ clip accuracy by over 90%.
+- Link: https://github.com/omn25/Audio-Classifier
+
+
 
 Personal:
 - Love combining AI with practical applications
