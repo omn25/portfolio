@@ -10,6 +10,12 @@ const Projects = () => {
     link: "https://www.bollyguess.ca/",
         },
         {
+    title: "Audio Segment Classifier",
+    description: "Classifies 10-second music clips as 'guessable' or not using a neural network trained on hand-labeled segments from Bollywood songs.",
+    technologies: ["PyTorch", "TensorFlow", "Librosa", "FFmpeg", "Pandas", "Scikit-Learn"],
+    link: "https://github.com/omn25/Audio-Classifier",
+        }, 
+        {
             title: "LearnETF",
             description: "AI-powered financial literacy platform that helps young adults build the confidence to invest.",
             technologies: ["Python", "Plotly", "Pandas", "NumPy", "Yfinance", "React.js", "Flask", "OpenAI API"],
@@ -27,12 +33,6 @@ const Projects = () => {
             technologies: ["Flask", "PyTorch", "Demucs (htdemucs)", "torchaudio", "basic-pitch", "music21", "LilyPond", "HTML", "CSS"],
             link: "https://github.com/omn25/musictranscriber",
         },
-        {
-    title: "Audio Segment Classifier",
-    description: "Classifies 10-second music clips as 'guessable' or not using a neural network trained on hand-labeled segments from Bollywood songs.",
-    technologies: ["PyTorch", "TensorFlow", "Librosa", "FFmpeg", "Pandas", "Scikit-Learn"],
-    link: "https://github.com/omn25/Audio-Classifier",
-}, 
     ];
 
     return (
