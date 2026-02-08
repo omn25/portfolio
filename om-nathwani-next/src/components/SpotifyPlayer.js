@@ -7,7 +7,7 @@ const SpotifyPlayer = () => {
     // - Track: /track/TRACK_ID
     // - Artist: /artist/ARTIST_ID
     // Get the ID from the Spotify share link, it's the part after the last '/'
-    const spotifyEmbedUrl = "https://open.spotify.com/embed/track/4Q0qVhFQa7j6jRKzo3HDmP";
+    const spotifyEmbedUrl = "https://open.spotify.com/embed/track/3Ueq2zboxwAbsvHrOjdEqz?si=e14196c889c34b1e";
 
     return (
         <div className="fixed bottom-6 left-6 z-40">

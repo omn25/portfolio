@@ -44,7 +44,6 @@ export default function HomeContent() {
                             "CS @ UWaterloo 🦁", 700,
                             "BBA @ WLU 🦅", 700,
                             "Varsity Athlete XC + T&F 🏃", 700,
-                            "Lowkey AI and Tech Nerd 🤫 🤪", 700,
                             "Hi, I'm Om Nathwani!", // Final state
                         ]}
                         wrapper="span"

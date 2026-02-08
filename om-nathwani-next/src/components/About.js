@@ -10,13 +10,13 @@ const About = () => {
                         Hi! 👋 I'm Om, a CS/BBA student and varsity XC/T&F athlete at the University of Waterloo and Wilfrid Laurier University. If you're reading this, that means you've stumbled across my page. Welcome!
                     </p>
                     <p className="leading-relaxed">
-                        Here you'll find some stuff I've built over the past few years and a bit about my experience. You'll also get to know me a little personally, like my unhealthy obsession with Bollywood music (check out the bottom left for my top listen this week) and my love for running.
+                        Here you'll find some stuff I've built over the past few years and a bit about my experience. You'll also get to know me a little personally, like my obsession with music (check out the bottom left for my top listen this week) and my love for running.
                     </p>
                     <p className="leading-relaxed">
-                        Feel free to look around. If you want to learn more about anything or have any questions, just click the chat button on the bottom right. It's not actually me, it's an AI... but what srsly isn't these days 🤷‍♂️.
+                        Feel free to look around. If you want to learn more about anything or have any questions, just click the chat button on the bottom right or reach out to me directly via the links on the main page!
                     </p>
                     <p className="leading-relaxed">
-                        Honestly, if I could describe myself in a nutshell, I'm just a super passionate uni student trying to figure it all out. I love learning, building cool stuff, and doing whatever I can to be the best version of myself.
+                        Honestly, if I could describe myself in a nutshell, I'm just a passionate and driven student trying to figure everything out. I love learning, building cool stuff, and doing whatever I can to be the best version of myself.
                     </p>
                 </div>
             </div>
