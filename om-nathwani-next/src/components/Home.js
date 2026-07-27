@@ -99,11 +99,11 @@ export default function HomeContent() {
                              border border-white/10 backdrop-blur-sm
                              text-white text-sm md:text-base font-light
                              transition-all duration-300 ease-out
-                             hover:border-white/20 hover:scale-102"
+                             hover:border-white/20"
                 >
                     Resume
                 </Link>
             </div>
         </div>
     );
-} 
+}

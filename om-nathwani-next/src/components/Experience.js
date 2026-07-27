@@ -1,13 +1,38 @@
-'use client';
 import Image from 'next/image';
 
 const Experience = () => {
     return (
-        <section id="experience" className="min-h-screen flex items-center justify-center p-4 md:p-8">
+        <section className="min-h-screen flex items-center justify-center p-4 md:p-8">
             <div className="max-w-4xl w-full space-y-6 md:space-y-8">
                 <h1 className="text-4xl md:text-5xl font-light text-white mb-8 md:mb-12">Experience</h1>
 
                 <div className="space-y-4 md:space-y-6">
+                    {/* Lazaridis Students' Society */}
+                    <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 md:p-8 relative border border-transparent hover:border-white/20 transition-all duration-300">
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h2 className="text-xl md:text-2xl font-light text-white mb-1">
+                                    Lazaridis Students&apos; Society
+                                </h2>
+                                <p className="text-base md:text-lg text-gray-300/90 font-light mb-1">Backend Developer</p>
+                            </div>
+                            <div className="text-right mt-2 md:mt-0">
+                                <p className="text-xs md:text-sm text-gray-400">May 2026 – Present</p>
+                                <p className="text-xs md:text-sm text-gray-500 italic flex items-center md:justify-end">
+                                    <span className="mr-1">📍</span> Waterloo, Ontario
+                                </p>
+                                <div className="w-24 h-12 md:w-32 md:h-16 relative mt-2 md:mt-4 ml-auto">
+                                    <Image
+                                        src="/images/lazsoc-logo.png"
+                                        alt="Lazaridis Students' Society Logo"
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Dawson Partners */}
                     <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 md:p-8 relative border border-transparent hover:border-white/20 transition-all duration-300">
                         <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
@@ -24,7 +49,7 @@ const Experience = () => {
                                 </p>
                                 <div className="w-12 h-12 md:w-16 md:h-16 relative mt-2 md:mt-4 ml-auto">
                                     <Image
-                                        src="/images/dawson-partners-logo.jpg"
+                                        src="/images/dawson-partners-logo.png"
                                         alt="Dawson Partners Logo"
                                         fill
                                         className="object-contain"
@@ -98,4 +123,4 @@ const Experience = () => {
     );
 };
 
-export default Experience; 
+export default Experience;

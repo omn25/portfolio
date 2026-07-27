@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 
 const Projects = () => {
@@ -36,7 +35,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="min-h-screen flex items-center justify-center p-4 md:p-8">
+        <section className="min-h-screen flex items-center justify-center p-4 md:p-8">
             <div className="max-w-6xl w-full">
                 <h1 className="text-4xl md:text-5xl font-light text-white mb-8 md:mb-12">Projects</h1>
 

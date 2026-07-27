@@ -1,5 +1,3 @@
-'use client';
-
 const SpotifyPlayer = () => {
     // You can replace this with any Spotify URL:
     // - Playlist: /playlist/PLAYLIST_ID
@@ -27,4 +25,4 @@ const SpotifyPlayer = () => {
     );
 };
 
-export default SpotifyPlayer; 
+export default SpotifyPlayer;

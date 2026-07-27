@@ -1,6 +1,5 @@
 import './globals.css';
 import Navbar from '../components/Navbar';
-import ClientLayout from '../components/ClientLayout';
 
 export const metadata = {
   title: 'Om Nathwani - Portfolio',
@@ -13,9 +12,7 @@ export default function RootLayout({ children }) {
       <body className="bg-black text-white min-h-screen antialiased">
         <Navbar />
         <main className="pt-16">
-          <ClientLayout>
-            {children}
-          </ClientLayout>
+          {children}
         </main>
       </body>
     </html>
