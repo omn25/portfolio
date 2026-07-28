@@ -77,6 +77,20 @@ export default function BulletinHero({ onNavigate }) {
               )}
               {item.type === "note" ? (
                 <span className="board-note-content">{item.noteText}</span>
+              ) : item.logos ? (
+                <span className="board-image board-logo-pair">
+                  {item.logos.map((logo) => (
+                    <span className="board-logo-pair__item" key={logo.src}>
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        fill
+                        sizes="120px"
+                        style={{ objectFit: "contain" }}
+                      />
+                    </span>
+                  ))}
+                </span>
               ) : (
                 <span className="board-image">
                   <Image
@@ -85,7 +99,8 @@ export default function BulletinHero({ onNavigate }) {
                     fill
                     sizes="(max-width: 720px) 42vw, 18vw"
                     style={{
-                      objectFit: item.fit || "cover",
+                      objectFit:
+                        item.fit || (item.type === "logo" ? "contain" : "cover"),
                       objectPosition: item.objectPosition || "50% 50%",
                     }}
                   />

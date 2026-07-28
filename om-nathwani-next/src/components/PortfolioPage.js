@@ -12,7 +12,7 @@ const prefersReducedMotion = () =>
 
 export default function PortfolioPage() {
   const [activeLifeId, setActiveLifeId] = useState("lazsoc");
-  const [activeCareerId, setActiveCareerId] = useState("lazsoc");
+  const [activeCareerId, setActiveCareerId] = useState("dawson");
 
   const handleBulletinNavigation = ({ destination, targetItem }) => {
     if (destination === "life" && targetItem) {

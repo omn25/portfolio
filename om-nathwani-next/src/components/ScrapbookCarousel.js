@@ -18,14 +18,34 @@ function LifeCard({ item }) {
           <h3>{item.title}</h3>
         </div>
         {item.logo && (
-          <div className="widget-logo">
-            <Image
-              src={item.logo}
-              alt={item.logoAlt}
-              fill
-              sizes="120px"
-              className="object-contain"
-            />
+          <div
+            className={`widget-logo${
+              item.secondaryLogo ? " widget-logo--paired" : ""
+            }`}
+          >
+            <span className="widget-logo__item">
+              <Image
+                src={item.logo}
+                alt={item.logoAlt}
+                fill
+                sizes="120px"
+                style={{
+                  objectFit: item.logoFit || "contain",
+                  filter: item.logoFilter,
+                }}
+              />
+            </span>
+            {item.secondaryLogo && (
+              <span className="widget-logo__item">
+                <Image
+                  src={item.secondaryLogo}
+                  alt={item.secondaryLogoAlt}
+                  fill
+                  sizes="150px"
+                  className="object-contain"
+                />
+              </span>
+            )}
           </div>
         )}
       </header>
@@ -42,7 +62,10 @@ function LifeCard({ item }) {
               alt={image.alt}
               fill
               sizes="(max-width: 720px) 68vw, 420px"
-              className="object-cover"
+              style={{
+                objectFit: image.fit || "cover",
+                objectPosition: image.objectPosition || "50% 50%",
+              }}
             />
           </figure>
         ))}
@@ -51,23 +74,11 @@ function LifeCard({ item }) {
           <div className="logo-poster">
             <span className="poster-tape" aria-hidden="true" />
             <Image
-              src={item.logo}
-              alt=""
+              src={item.cardImage || item.logo}
+              alt={item.cardImageAlt || ""}
               fill
               sizes="(max-width: 720px) 60vw, 460px"
-              className="object-contain"
-            />
-          </div>
-        )}
-
-        {item.secondaryLogo && (
-          <div className="secondary-logo">
-            <Image
-              src={item.secondaryLogo}
-              alt={item.secondaryLogoAlt}
-              fill
-              sizes="180px"
-              className="object-contain"
+              style={{ objectFit: item.cardFit || item.logoFit || "contain" }}
             />
           </div>
         )}
@@ -82,15 +93,20 @@ function LifeCard({ item }) {
 }
 
 function CareerCard({ item }) {
-  const title = (
-    <>
-      {item.title}
-      {item.href && <FiExternalLink aria-hidden="true" />}
-    </>
-  );
+  const Card = item.href ? "a" : "article";
 
   return (
-    <article className="scrapbook-widget career-widget">
+    <Card
+      className="scrapbook-widget career-widget"
+      {...(item.href
+        ? {
+            href: item.href,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            "aria-label": `Visit ${item.title}`,
+          }
+        : {})}
+    >
       <div className="career-logo-sheet">
         <span className="career-tape" aria-hidden="true" />
         <div className="career-logo">
@@ -99,7 +115,10 @@ function CareerCard({ item }) {
             alt={item.logoAlt}
             fill
             sizes="(max-width: 720px) 52vw, 260px"
-            className="object-contain"
+            style={{
+              objectFit: "contain",
+              filter: item.logoFilter,
+            }}
           />
         </div>
         {item.image && (
@@ -118,13 +137,8 @@ function CareerCard({ item }) {
       <div className="career-content">
         <p className="widget-eyebrow">{item.role}</p>
         <h3>
-          {item.href ? (
-            <a href={item.href} target="_blank" rel="noopener noreferrer">
-              {title}
-            </a>
-          ) : (
-            title
-          )}
+          {item.title}
+          {item.href && <FiExternalLink aria-hidden="true" />}
         </h3>
         <dl className="career-meta">
           <div>
@@ -147,8 +161,14 @@ function CareerCard({ item }) {
             ))}
           </ul>
         )}
+        {item.href && (
+          <span className="career-visit">
+            visit site
+            <FiExternalLink aria-hidden="true" />
+          </span>
+        )}
       </div>
-    </article>
+    </Card>
   );
 }
 
@@ -264,6 +284,7 @@ export default function ScrapbookCarousel({
 
   const startDrag = (event) => {
     if (event.pointerType !== "mouse") return;
+    if (event.target.closest("a, button")) return;
     const viewport = viewportRef.current;
     if (!viewport) return;
     dragState.current = {
