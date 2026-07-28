@@ -1,26 +1,19 @@
 const SpotifyPlayer = () => {
-    // You can replace this with any Spotify URL:
-    // - Playlist: /playlist/PLAYLIST_ID
-    // - Album: /album/ALBUM_ID
-    // - Track: /track/TRACK_ID
-    // - Artist: /artist/ARTIST_ID
-    // Get the ID from the Spotify share link, it's the part after the last '/'
     const spotifyEmbedUrl = "https://open.spotify.com/embed/track/3Ueq2zboxwAbsvHrOjdEqz?si=e14196c889c34b1e";
 
     return (
-        <div className="fixed bottom-6 left-6 z-40">
+        <div className="spotify-note">
+            <span className="spotify-label">on repeat lately</span>
             <iframe
+                title="Om's current Spotify pick"
                 src={`${spotifyEmbedUrl}?utm_source=generator&theme=0&hideHeader=1&hideCover=1&showPlayButton=1`}
-                width="300"
+                width="100%"
                 height="80"
                 frameBorder="0"
-                allowFullScreen=""
+                allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
-                className="rounded-lg bg-black/10 backdrop-blur-sm border border-white/5 
-                         hover:border-white/10 transition-all duration-300
-                         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
-            ></iframe>
+            />
         </div>
     );
 };

@@ -1,133 +1,93 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
 
-const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+import { useEffect, useState } from "react";
 
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
+const navigation = [
+  { id: "me", label: "me rn." },
+  { id: "life", label: "life rn." },
+  { id: "career", label: "career rn." },
+];
 
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
+const reducedMotion = () =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            // Prevent default hash jump
-            history.pushState(null, '', `#${sectionId}`);
-
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-
-            // Dispatch custom event for home click
-            if (sectionId === 'home') {
-                window.dispatchEvent(new CustomEvent('homeClick'));
-            }
-
-            // Close mobile menu after clicking
-            setIsMenuOpen(false);
-        }
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
     };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
-    // Prevent default hash jump on page load
-    if (typeof window !== 'undefined') {
-        window.addEventListener('load', () => {
-            if (window.location.hash) {
-                const id = window.location.hash.substring(1);
-                setTimeout(() => {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }, 0);
-            }
-        });
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    window.history.pushState(null, "", `#${sectionId}`);
+    section.scrollIntoView({
+      behavior: reducedMotion() ? "auto" : "smooth",
+      block: "start",
+    });
+
+    if (sectionId === "home") {
+      window.dispatchEvent(new CustomEvent("homeClick"));
     }
+    setIsMenuOpen(false);
+  };
 
-    return (
-        <nav className="fixed top-0 left-0 right-0 w-full flex justify-between items-center px-4 md:px-12 py-6 bg-transparent backdrop-blur-sm z-50">
-            {/* Left side */}
-            <button
-                onClick={() => scrollToSection('home')}
-                className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
-            >
-                Home
-            </button>
+  return (
+    <nav className="site-nav" aria-label="Primary navigation">
+      <button
+        type="button"
+        onClick={() => scrollToSection("home")}
+        className="nav-home"
+      >
+        Om Nathwani
+      </button>
 
-            {/* Mobile Menu Button */}
-            {isMobile && (
-                <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="text-white p-2 focus:outline-none"
-                >
-                    <div className="w-6 h-0.5 bg-white mb-1.5"></div>
-                    <div className="w-6 h-0.5 bg-white mb-1.5"></div>
-                    <div className="w-6 h-0.5 bg-white"></div>
-                </button>
-            )}
+      <div className="nav-desktop">
+        {navigation.map((item) => (
+          <button
+            type="button"
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
 
-            {/* Desktop Navigation */}
-            {!isMobile && (
-                <div className="flex items-center space-x-12">
-                    <button
-                        onClick={() => scrollToSection('about')}
-                        className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
-                    >
-                        Introduction
-                    </button>
-                    <button
-                        onClick={() => scrollToSection('experience')}
-                        className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
-                    >
-                        Experience
-                    </button>
-                    <button
-                        onClick={() => scrollToSection('projects')}
-                        className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
-                    >
-                        Projects
-                    </button>
-                </div>
-            )}
+      <button
+        type="button"
+        className="nav-toggle"
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-navigation"
+        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        onClick={() => setIsMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+      </button>
 
-            {/* Mobile Menu */}
-            {isMobile && isMenuOpen && (
-                <div className="absolute top-full left-0 right-0 bg-black/90 backdrop-blur-sm py-4 animate-fade-in">
-                    <div className="flex flex-col items-center space-y-4">
-                        <button
-                            onClick={() => scrollToSection('about')}
-                            className="text-white text-lg font-medium hover:text-gray-300 transition-colors w-full text-center py-2"
-                        >
-                            Introduction
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('experience')}
-                            className="text-white text-lg font-medium hover:text-gray-300 transition-colors w-full text-center py-2"
-                        >
-                            Experience
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('projects')}
-                            className="text-white text-lg font-medium hover:text-gray-300 transition-colors w-full text-center py-2"
-                        >
-                            Projects
-                        </button>
-                    </div>
-                </div>
-            )}
-        </nav>
-    );
-};
-
-export default Navbar;
+      <div
+        id="mobile-navigation"
+        className={`nav-mobile${isMenuOpen ? " is-open" : ""}`}
+        aria-hidden={!isMenuOpen}
+      >
+        {navigation.map((item) => (
+          <button
+            type="button"
+            key={item.id}
+            tabIndex={isMenuOpen ? 0 : -1}
+            onClick={() => scrollToSection(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+}

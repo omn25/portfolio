@@ -1,19 +1,18 @@
-import './globals.css';
-import Navbar from '../components/Navbar';
+import "./globals.css";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
-  title: 'Om Nathwani - Portfolio',
-  description: 'Personal portfolio showcasing my projects and experience in AI, ML, and software development.',
+  title: "Om Nathwani — right now",
+  description:
+    "A living snapshot of Om Nathwani's life, communities, work, and current interests.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white min-h-screen antialiased">
+      <body>
         <Navbar />
-        <main className="pt-16">
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
