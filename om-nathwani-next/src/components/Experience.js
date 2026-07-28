@@ -23,7 +23,7 @@ const Experience = () => {
                                 </p>
                                 <div className="w-24 h-12 md:w-32 md:h-16 relative mt-2 md:mt-4 ml-auto">
                                     <Image
-                                        src="/images/lazsoc-logo.png"
+                                        src="/images/logos/lazsoc-logo.png"
                                         alt="Lazaridis Students' Society Logo"
                                         fill
                                         className="object-contain"
@@ -49,7 +49,7 @@ const Experience = () => {
                                 </p>
                                 <div className="w-12 h-12 md:w-16 md:h-16 relative mt-2 md:mt-4 ml-auto">
                                     <Image
-                                        src="/images/dawson-partners-logo.png"
+                                        src="/images/logos/dawson-partners-logo.png"
                                         alt="Dawson Partners Logo"
                                         fill
                                         className="object-contain"
@@ -75,7 +75,7 @@ const Experience = () => {
                                 </p>
                                 <div className="w-12 h-12 md:w-16 md:h-16 relative mt-2 md:mt-4 ml-auto">
                                     <Image
-                                        src="/images/covalense-logo.png"
+                                        src="/images/logos/covalense-logo.png"
                                         alt="Covalense Digital Logo"
                                         fill
                                         className="object-contain"
@@ -105,7 +105,7 @@ const Experience = () => {
                                 </p>
                                 <div className="w-12 h-12 md:w-16 md:h-16 relative mt-2 md:mt-4 ml-auto">
                                     <Image
-                                        src="/images/watai-logo.png"
+                                        src="/images/logos/watai-logo.png"
                                         alt="Wat.AI Logo"
                                         fill
                                         className="object-contain"
