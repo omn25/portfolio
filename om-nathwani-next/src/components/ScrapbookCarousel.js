@@ -9,11 +9,25 @@ const getReducedMotion = () =>
 
 function LifeCard({ item }) {
   const notes = Array.isArray(item.notes) ? item.notes : [item.notes];
+  const [activeNote, setActiveNote] = useState(0);
+  const currentNote = notes[activeNote] || notes[0];
+  const noteDensity =
+    currentNote.length > 650
+      ? " widget-note--dense"
+      : currentNote.length > 450
+        ? " widget-note--compact"
+        : "";
+
+  const changeNote = (direction) => {
+    setActiveNote(
+      (current) => (current + direction + notes.length) % notes.length,
+    );
+  };
 
   return (
     <article
       className={`scrapbook-widget life-widget life-widget--${item.layout}${
-        notes.length > 1 ? " life-widget--multi-notes" : ""
+        notes.length > 1 ? " life-widget--story" : ""
       }`}
     >
       <header className="widget-header">
@@ -88,26 +102,60 @@ function LifeCard({ item }) {
         )}
       </div>
 
-      {notes.length > 1 ? (
-        <div
-          className={`widget-note-cluster widget-note-cluster--${notes.length}`}
-        >
-          {notes.map((note, index) => (
-            <aside
-              className={`widget-note widget-note--${index + 1}`}
-              key={note}
+      <aside
+        className={`widget-note${
+          notes.length > 1 ? " widget-note--stacked" : ""
+        }${noteDensity}`}
+      >
+        {notes.length > 1 ? (
+          <>
+            <div className="widget-note-toolbar">
+              <span>
+                thought {String(activeNote + 1).padStart(2, "0")} /{" "}
+                {String(notes.length).padStart(2, "0")}
+              </span>
+              <div className="widget-note-arrows">
+                <button
+                  type="button"
+                  onClick={() => changeNote(-1)}
+                  aria-label={`Previous ${item.title} thought`}
+                >
+                  <FiArrowLeft aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => changeNote(1)}
+                  aria-label={`Next ${item.title} thought`}
+                >
+                  <FiArrowRight aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+            <p aria-live="polite">{currentNote}</p>
+            <div
+              className="widget-note-dots"
+              role="group"
+              aria-label={`${item.title} thoughts`}
             >
-              <span aria-hidden="true">✦</span>
-              <p>{note}</p>
-            </aside>
-          ))}
-        </div>
-      ) : (
-        <aside className="widget-note">
-          <span aria-hidden="true">✦</span>
-          <p>{notes[0]}</p>
-        </aside>
-      )}
+              {notes.map((note, index) => (
+                <button
+                  type="button"
+                  className={index === activeNote ? "is-active" : ""}
+                  onClick={() => setActiveNote(index)}
+                  aria-label={`Show ${item.title} thought ${index + 1}`}
+                  aria-current={index === activeNote ? "true" : undefined}
+                  key={note}
+                />
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <span aria-hidden="true">✦</span>
+            <p>{currentNote}</p>
+          </>
+        )}
+      </aside>
     </article>
   );
 }
