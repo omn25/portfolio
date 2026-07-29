@@ -293,6 +293,15 @@ a {
   background: rgba(248, 246, 239, 0.7);
 }
 
+.board-item--compact-logo {
+  padding: 3px;
+  background: #e9e3d8;
+}
+
+.board-item--logo.board-item--compact-logo .board-image img {
+  padding: 0;
+}
+
 .board-item--logo .board-image img {
   padding: 8%;
 }
@@ -595,9 +604,15 @@ a {
 .spotify-note iframe {
   display: block;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
   border: 0;
-  border-radius: 4px;
-  background: #e8e5dc;
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: 0 5px 12px rgba(38, 32, 24, 0.08);
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.65) contrast(0.78)
+    sepia(0.22);
+  opacity: 0.82;
 }
 
 .page-section {
@@ -725,19 +740,19 @@ a {
 }
 
 .me-photo--northeast {
-  top: 18px;
-  right: 1%;
-  width: 245px;
-  height: 275px;
-  transform: rotate(4deg);
+  top: 10px;
+  right: -1%;
+  width: 240px;
+  height: 305px;
+  transform: rotate(3deg);
 }
 
 .me-photo--southwest {
-  bottom: 5px;
+  bottom: -2px;
   left: 3%;
-  width: 270px;
-  height: 220px;
-  transform: rotate(3deg);
+  width: 235px;
+  height: 295px;
+  transform: rotate(2deg);
 }
 
 .me-photo--southeast {
@@ -984,6 +999,26 @@ a {
   width: 38%;
   height: 230px;
   transform: rotate(3deg);
+}
+
+.life-widget--cluster .collage-photo--2 {
+  height: auto;
+  padding-bottom: 12px;
+  aspect-ratio: 1.35;
+}
+
+.life-widget--cluster .collage-photo {
+  translate: 0 26px;
+}
+
+.life-widget--cluster .collage-photo--2 img {
+  inset: 8px 8px 12px !important;
+  height: calc(100% - 20px) !important;
+}
+
+.life-widget--cluster .collage-photo--3 {
+  right: 1%;
+  bottom: 34px;
 }
 
 .collage-photo--3 {

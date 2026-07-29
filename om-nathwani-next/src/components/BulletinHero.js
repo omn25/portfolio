@@ -102,6 +102,7 @@ export default function BulletinHero({ onNavigate }) {
                       objectFit:
                         item.fit || (item.type === "logo" ? "contain" : "cover"),
                       objectPosition: item.objectPosition || "50% 50%",
+                      filter: item.filter,
                     }}
                   />
                 </span>
@@ -125,7 +126,7 @@ export default function BulletinHero({ onNavigate }) {
                   700,
                   "Varsity Athlete XC + T&F 🏃",
                   700,
-                  "Hi, I'm Om Nathwani!",
+                  "Om Nathwani",
                 ]}
                 wrapper="span"
                 speed={50}
@@ -135,8 +136,7 @@ export default function BulletinHero({ onNavigate }) {
               />
             </h1>
             <p className="hero-copy">
-              A student, builder, runner, and person collecting a lot of good
-              moments along the way.
+              Builder, student, athlete; just trying to be the best version of myself :)
             </p>
 
             <div className="hero-links" aria-label="Contact and social links">
@@ -167,7 +167,7 @@ export default function BulletinHero({ onNavigate }) {
                 open resume
                 <span aria-hidden="true">↗</span>
               </Link>
-              <span className="hero-hint">tap a piece to look closer</span>
+              <span className="hero-hint"></span>
             </div>
 
             <SpotifyPlayer />

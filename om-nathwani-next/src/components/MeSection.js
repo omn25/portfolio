@@ -28,7 +28,7 @@ export default function MeSection() {
         ))}
 
         <article className="me-copy paper-surface">
-          <p className="paper-label">a note from me</p>
+          <p className="paper-label">quick intro note!</p>
           {aboutParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

@@ -103,7 +103,9 @@ function CareerCard({ item }) {
             href: item.href,
             target: "_blank",
             rel: "noopener noreferrer",
-            "aria-label": `Visit ${item.title}`,
+            "aria-label": item.linkLabel
+              ? `${item.linkLabel}: ${item.title}`
+              : `Visit ${item.title}`,
           }
         : {})}
     >
@@ -163,7 +165,7 @@ function CareerCard({ item }) {
         )}
         {item.href && (
           <span className="career-visit">
-            visit site
+            {item.linkLabel || "visit site"}
             <FiExternalLink aria-hidden="true" />
           </span>
         )}

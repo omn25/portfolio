@@ -1,5 +1,5 @@
 const SpotifyPlayer = () => {
-    const spotifyEmbedUrl = "https://open.spotify.com/embed/track/3Ueq2zboxwAbsvHrOjdEqz?si=e14196c889c34b1e";
+    const spotifyEmbedUrl = "https://open.spotify.com/embed/track/4ylWMuGbMXNDgDd8lErEle";
 
     return (
         <div className="spotify-note">
@@ -10,6 +10,7 @@ const SpotifyPlayer = () => {
                 width="100%"
                 height="80"
                 frameBorder="0"
+                scrolling="no"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"

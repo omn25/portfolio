@@ -9,12 +9,12 @@ export default function CareerSection({ activeId, onActiveChange }) {
     >
       <div className="section-heading section-heading--split">
         <div>
-          <p className="eyebrow">03 / the work</p>
+          <p className="eyebrow">03 / the passion</p>
           <h2>career rn.</h2>
         </div>
         <aside className="career-direction">
           <span className="paperclip" aria-hidden="true" />
-          <p>Current career direction / what I want to work on goes here.</p>
+          <p>I’m passionate about building the backend systems behind financial products and infrastructure, from payments and financial workflows to data, risk, and decision-making systems.</p>
         </aside>
       </div>
       <ScrapbookCarousel
