@@ -32,9 +32,6 @@ export default function MeSection() {
           {aboutParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <span className="scribble" aria-hidden="true">
-            still figuring it out →
-          </span>
         </article>
       </div>
     </section>

@@ -136,7 +136,7 @@ export default function BulletinHero({ onNavigate }) {
               />
             </h1>
             <p className="hero-copy">
-              Builder, student, athlete; just trying to be the best version of myself :)
+              Student, builder, athlete; just working to be the best version of myself :)
             </p>
 
             <div className="hero-links" aria-label="Contact and social links">

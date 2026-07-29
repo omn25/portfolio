@@ -3,7 +3,7 @@ const SpotifyPlayer = () => {
 
     return (
         <div className="spotify-note">
-            <span className="spotify-label">on repeat lately</span>
+            <span className="spotify-label">vibe rn.</span>
             <iframe
                 title="Om's current Spotify pick"
                 src={`${spotifyEmbedUrl}?utm_source=generator&theme=0&hideHeader=1&hideCover=1&showPlayButton=1`}

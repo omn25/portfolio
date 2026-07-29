@@ -22,10 +22,10 @@ export const socialLinks = [
 ];
 
 export const aboutParagraphs = [
-  "Hi! 👋 I'm Om, a CS/BBA student and varsity XC/T&F athlete at the University of Waterloo and Wilfrid Laurier University. If you're reading this, that means you've stumbled across my page. Welcome!",
-  "Here you'll find some stuff I've built over the past few years and a bit about my experience. You'll also get to know me a little personally, like my obsession with music and my love for running.",
-  "Feel free to look around. If you want to learn more about anything or have any questions, reach out to me directly through the links on the main page!",
-  "Honestly, if I could describe myself in a nutshell, I'm just a passionate and driven student trying to figure everything out. I love learning, building cool stuff, and doing whatever I can to be the best version of myself.",
+  "Hi! 👋 I’m Om, a CS/BBA student and varsity XC/T&F athlete at the University of Waterloo and Wilfrid Laurier University. If you’re reading this, that means you’ve stumbled across my page. Welcome!",
+  "Here you’ll find my attempt at expressing who I am beyond what you would see on a LinkedIn page or resume. My goal is to help you get a sense of my habits and qualities through how I approach life, whether that’s through what I’m building, what I’ve done on my work terms, or other parts of my life right now; from athletics and school to the communities I’m part of and the people and experiences shaping me.",
+  "I’ve changed a lot over the past few years, and I know I’m going to keep changing. That’s kind of the whole point of the “rn” thing. This site is a snapshot of where I am right now in that journey, what I care about, what I’m working on, and the person I’m trying to become.",
+  "Feel free to look around. If anything here resonates with you, or you just want to reach out and chat, I’d love to hear from you!",
 ];
 
 export const mePhotos = [
@@ -60,7 +60,11 @@ export const lifeItems = [
     logoAlt: "SanyaCard logo",
     logoFit: "contain",
     logoFilter: "invert(1)",
-    notes: "SanyaCard notes go here.",
+    notes: [
+      "SanyaCard started as a pretty crazy idea that I initially decided to work on simply because I didn’t really have a reason to say no. But as I’ve grown over the past year and spent more time developing the idea, it’s become something that genuinely resonates with me.",
+      "I’ve realized how much I value meeting people and actually getting to know who they are beyond the surface-level version you usually see online. In a time where we’re more connected than ever, it still feels weirdly hard to understand someone from just a quick introduction or a LinkedIn profile.",
+      "That’s what SanyaCard is trying to change. It gives people a way to design a profile that actually feels like them, then share it instantly through NFC when they meet someone. To me, it’s really about making those first interactions more meaningful and giving people a better chance to leave an impression that actually reflects who they are.",
+    ],
     layout: "duo",
     images: [
       {
@@ -81,7 +85,11 @@ export const lifeItems = [
     eyebrow: "XC + T&F",
     logo: "/images/logos/xc-logo.png",
     logoAlt: "Cross country logo",
-    notes: "Running notes / what this means to me.",
+    notes: [
+      "I started running in Grade 10. At the time, I was a competitive swimmer and also really into basketball, but during COVID, when the pools were closed, I got into running and decided to join my school’s cross country team to keep that going. I honestly fell in love with the sport almost instantly. I became obsessed with training, improving, and seeing how far I could push myself toward the goals I had.",
+      "Over time, running became a huge part of my life. Through the injuries, the good races, the bad ones, and everything in between, I feel like it’s played a role in almost every period of growth I’ve had. It’s taught me dedication, discipline, commitment, and how to prioritize the things that matter to me. It’s also taught me to love the process without always worrying about the result, to be comfortable alone with my thoughts, and to trust myself and the work I’ve put in when it’s finally time to perform.",
+      "Now, running at Laurier has given me even more than I ever expected from the sport. I’ve gotten to travel, compete, and keep doing something I genuinely love, but the best part has been the people. Once the season comes around, the team really starts to feel like a family, all working toward our own goals while pushing and supporting each other along the way. Honestly, I don’t think I could ask for much more from running than that.",
+    ],
     layout: "race",
     images: [
       {
@@ -104,7 +112,11 @@ export const lifeItems = [
     eyebrow: "community",
     logo: "/images/logos/lazsoc-logo.png",
     logoAlt: "Lazaridis Students' Society logo",
-    notes: "LAZSOC notes go here.",
+    notes: [
+      "LazSoc is still pretty new to me, having only joined in May of this year, but the past few months have already had a huge impact on who I am. I’ve never really been the type of person to randomly start conversations or put myself out there. For a long time, I was much more comfortable keeping to myself and only speaking when someone spoke to me first.",
+      "I knew joining LazSoc was going to push me out of that comfort zone, and it definitely has. I’ve found myself doing things I never really thought I would, meeting so many amazing people, forming meaningful relationships, being more open, bringing positive energy into rooms, and honestly just having a lot more fun.",
+      "LazSoc has shown me that pushing myself outside of what feels comfortable can genuinely make me happier. It’s become another way for me to challenge myself, and I’m really grateful for how much that has helped me grow. The more I’ve pushed myself here, the more willing I’ve become to challenge myself in other parts of my life too. It’s made me want to keep putting myself in situations that feel unfamiliar, see what I’m capable of, and keep pushing the limits of what I think is possible for myself.",
+    ],
     layout: "cluster",
     images: [
       {
@@ -130,7 +142,14 @@ export const lifeItems = [
     logoAlt: "University of Waterloo crest",
     secondaryLogo: "/images/logos/laurier-logo.svg",
     secondaryLogoAlt: "Wilfrid Laurier University logo",
-    notes: "School notes go here.",
+    notes: [
+      "School means a lot of different things to different people. For me, it’s been one of the biggest catalysts for growth in my life, helping me find my identity by opening me up to experiences, perspectives, and possibilities I didn’t even know existed before university.",
+      "I think one of the biggest shocks was realizing how much of a bubble I had been in during high school. Growing up, I was always told that university is about becoming more responsible towards making sure you studied, kept up with school, and did well. And sure, that’s part of it, but university made me realize it’s about so much more than that. Suddenly, so much of your life is actually in your control, and you have to decide what you want to do with it. It took me a while to figure that out, but I started realizing that being responsible for yourself also means making time for the things you care about, whether that’s school, your career, your hobbies, the people around you, or just going out and actually living your life.",
+      "Since then, school has started to feel almost like a sandbox for me. It’s a place where I can learn, get involved, try things I’ve never done before, meet completely different people, and put myself fully into whatever I choose to take on.",
+      "Being in the dual degree program has made that even more meaningful. Going between two completely different schools, communities, and environments has exposed me to so many different people and ways of thinking. It’s given me the chance to try more, experience more, and keep figuring out what I care about and who I want to become.",
+      "I’m also really grateful for where I am right now. Being here has given me the space to develop myself in ways I don’t think I could have anywhere else, and it’s made me appreciate how much the environment around you can shape who you become.",
+      "Now I’m honestly just excited to see what else school has in store for me, what I can keep learning, how I can keep challenging myself, and how I can keep growing into someone who can really contribute to the things I care about.",
+    ],
     layout: "campus",
     images: [
       {
@@ -152,11 +171,16 @@ export const lifeItems = [
   },
   {
     id: "yuva",
-    title: "Hindu Yuva",
+    title: "Hindu Yuva Waterloo",
     eyebrow: "community",
     logo: "/images/logos/hindu-yuva-logo.png",
     logoAlt: "Hindu Yuva logo",
-    notes: "Yuva notes / community memories go here.",
+    notes: [
+      "My culture has always been a really important part of who I am, but for a long time it was also something I mostly kept to myself. When I came to university, I wanted to find people who shared that part of my identity, but in first year I honestly had no idea where to start.",
+      "In second year, I got the opportunity to join Hindu Yuva, and I took it. From the beginning, it felt meaningful to me because it was about more than just finding a community for myself. I really believe students should have a space where they can connect with their culture, meet people who understand that part of them, and feel comfortable sharing it without having to question whether they belong.",
+      "That’s really what I’ve cared about most through Hindu Yuva: helping build that kind of community. I’ve met so many amazing people through Hindu Yuva Waterloo and through experiences like Dakshata Varga with chapters from across Ontario. Having that space has made me feel more connected to the people around me, but also more connected to myself, and I think that’s a big reason why I care so much about making sure other students can have that too.",
+      "Now, as president, I want to keep building on that. My goal is to keep creating a welcoming and inclusive community for anyone who wants to be part of it, while also giving people more opportunities to connect, learn, and celebrate together. We have a lot planned for the coming terms, and I’m really excited to see what we’re able to create for the students who are looking for that kind of community.",
+    ],
     layout: "celebration",
     images: [
       {

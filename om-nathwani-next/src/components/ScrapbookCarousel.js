@@ -8,9 +8,13 @@ const getReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function LifeCard({ item }) {
+  const notes = Array.isArray(item.notes) ? item.notes : [item.notes];
+
   return (
     <article
-      className={`scrapbook-widget life-widget life-widget--${item.layout}`}
+      className={`scrapbook-widget life-widget life-widget--${item.layout}${
+        notes.length > 1 ? " life-widget--multi-notes" : ""
+      }`}
     >
       <header className="widget-header">
         <div>
@@ -84,10 +88,26 @@ function LifeCard({ item }) {
         )}
       </div>
 
-      <aside className="widget-note">
-        <span aria-hidden="true">✦</span>
-        <p>{item.notes}</p>
-      </aside>
+      {notes.length > 1 ? (
+        <div
+          className={`widget-note-cluster widget-note-cluster--${notes.length}`}
+        >
+          {notes.map((note, index) => (
+            <aside
+              className={`widget-note widget-note--${index + 1}`}
+              key={note}
+            >
+              <span aria-hidden="true">✦</span>
+              <p>{note}</p>
+            </aside>
+          ))}
+        </div>
+      ) : (
+        <aside className="widget-note">
+          <span aria-hidden="true">✦</span>
+          <p>{notes[0]}</p>
+        </aside>
+      )}
     </article>
   );
 }
