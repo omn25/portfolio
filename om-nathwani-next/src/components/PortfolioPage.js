@@ -11,7 +11,7 @@ const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export default function PortfolioPage() {
-  const [activeLifeId, setActiveLifeId] = useState("lazsoc");
+  const [activeLifeId, setActiveLifeId] = useState("sanya");
   const [activeCareerId, setActiveCareerId] = useState("dawson");
 
   const handleBulletinNavigation = ({ destination, targetItem }) => {
