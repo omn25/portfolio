@@ -22,9 +22,9 @@ export const socialLinks = [
 ];
 
 export const aboutParagraphs = [
-  "Hi! 👋 I’m Om, a CS/BBA student and varsity XC/T&F athlete at the University of Waterloo and Wilfrid Laurier University. If you’re reading this, that means you’ve stumbled across my page. Welcome!",
-  "Here you’ll find my attempt at expressing who I am beyond what you would see on a LinkedIn page or resume. My goal is to help you get a sense of my habits and qualities through how I approach life, whether that’s through what I’m building, what I’ve done on my work terms, or other parts of my life right now; from athletics and school to the communities I’m part of and the people and experiences shaping me.",
-  "I’ve changed a lot over the past few years, and I know I’m going to keep changing. That’s kind of the whole point of the “rn” thing. This site is a snapshot of where I am right now in that journey, what I care about, what I’m working on, and the person I’m trying to become.",
+  "Hi! 👋 I’m Om, a CS/BBA student and varsity XC/T&F athlete at the University of Waterloo and Wilfrid Laurier University. Welcome!",
+  "Here you’ll find my attempt at expressing who I am beyond what you would see on a LinkedIn page or resume. My goal is to help you get a sense of my habits and qualities through how I approach life. That means the work I’ve done, the things I’ve built and learned from, and also how I spend my time, challenge myself, and show up in the other parts of my life.",
+  "I’ve changed a lot over the past few years, and I know I’m going to keep changing. That’s kind of the whole point of the “rn” thing. This site is a snapshot of where I am right now in that journey, what I care about, what I’m curious about, and what I'm working toward.",
   "Feel free to look around. If anything here resonates with you, or you just want to reach out and chat, I’d love to hear from you!",
 ];
 
@@ -86,7 +86,7 @@ export const lifeItems = [
     logo: "/images/logos/xc-logo.png",
     logoAlt: "Cross country logo",
     notes: [
-      "I started running in Grade 10. At the time, I was a competitive swimmer and also really into basketball, but during COVID, when the pools were closed, I got into running and decided to join my school’s cross country team to keep that going. I honestly fell in love with the sport almost instantly. I became obsessed with training, improving, and seeing how far I could push myself toward the goals I had.",
+      "I started running in Grade 10. At the time, I was a focused on competitive swimming, but during COVID, when the pools were closed, I got into running and decided to join my school’s cross country team to keep that going. I honestly fell in love with the sport almost instantly. There was something about cross country itself that I loved, being out in nature, running through trails and trees, and having the sport feel so simple and peaceful even when the racing was hard.",
       "Over time, running became a huge part of my life. Through the injuries, the good races, the bad ones, and everything in between, I feel like it’s played a role in almost every period of growth I’ve had. It’s taught me dedication, discipline, commitment, and how to prioritize the things that matter to me. It’s also taught me to love the process without always worrying about the result, to be comfortable alone with my thoughts, and to trust myself and the work I’ve put in when it’s finally time to perform.",
       "Now, running at Laurier has given me even more than I ever expected from the sport. I’ve gotten to travel, compete, and keep doing something I genuinely love, but the best part has been the people. Once the season comes around, the team really starts to feel like a family, all working toward our own goals while pushing and supporting each other along the way. Honestly, I don’t think I could ask for much more from running than that.",
     ],
@@ -213,6 +213,19 @@ export const careerItems = [
     notes: "Worked on financial models for cash flow forecasting, and built backend systems for document processing, financial data pipelines, internal tooling, and payment workflows.",
   },
   {
+    id: "covalense",
+    title: "Covalense Digital",
+    role: "Software Engineer Intern",
+    dates: "May 2025 – Aug 2025",
+    location: "Mississauga, Ontario",
+    logo: "/images/logos/covalense-logo.png",
+    logoAlt: "Covalense Digital logo",
+    href: "/resume.pdf",
+    linkLabel: "view résumé",
+    notes:
+      "Developed and demoed a secure, RBAC-enabled internal MCP system that lets users search and interact with data in natural language while respecting access permissions.",
+  },
+  {
     id: "sanya",
     title: "SanyaCard",
     role: "Co-Founder & CTO",
@@ -249,19 +262,6 @@ export const careerItems = [
     technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Supabase"],
     notes:
       "A daily Bollywood song guessing game featuring randomized audio clips and live leaderboards, built to scale and deployed publicly.",
-  },
-  {
-    id: "covalense",
-    title: "Covalense Digital",
-    role: "Software Engineer Intern",
-    dates: "May 2025 – Aug 2025",
-    location: "Mississauga, Ontario",
-    logo: "/images/logos/covalense-logo.png",
-    logoAlt: "Covalense Digital logo",
-    href: "/resume.pdf",
-    linkLabel: "view résumé",
-    notes:
-      "Developed and demoed a secure, RBAC-enabled internal MCP system that lets users search and interact with data in natural language while respecting access permissions.",
   },
   {
     id: "watai",
@@ -620,6 +620,27 @@ export const bulletinItems = [
       rotation: "-2deg",
       aspect: "1",
       z: 5,
+    },
+  },
+  {
+    id: "board-covalense",
+    label: "View Covalense Digital in Career RN",
+    type: "logo",
+    variant: "sticker",
+    src: "/images/logos/covalense-logo.png",
+    alt: "Covalense Digital logo",
+    fit: "contain",
+    destination: "career",
+    targetItem: "covalense",
+    pin: "blue",
+    mobileHidden: true,
+    style: {
+      x: "85.5%",
+      y: "61.5%",
+      width: "5.5%",
+      rotation: "-4deg",
+      aspect: "1",
+      z: 7,
     },
   },
   {
