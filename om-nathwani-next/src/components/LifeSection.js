@@ -10,7 +10,7 @@ export default function LifeSection({ activeId, onActiveChange }) {
           <h2>life rn.</h2>
         </div>
         <p className="section-intro">
-          Communities, initiatives, school, hobbies, and the things that make up my time that I am grateful for.
+          Communities, initiatives, school, hobbies, and the things that make up my time that I'm grateful for.
         </p>
       </div>
       <ScrapbookCarousel
