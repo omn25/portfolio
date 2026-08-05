@@ -996,9 +996,16 @@ a {
 }
 
 .life-widget--cluster .collage-photo--2 {
+  right: 0;
+  width: 35%;
   height: auto;
   padding-bottom: 12px;
   aspect-ratio: 1.35;
+}
+
+.life-widget--cluster .collage-photo--1 {
+  width: 62%;
+  height: 300px;
 }
 
 .life-widget--cluster .collage-photo {
@@ -1011,8 +1018,9 @@ a {
 }
 
 .life-widget--cluster .collage-photo--3 {
-  right: 1%;
+  right: 0;
   bottom: 34px;
+  width: 35%;
 }
 
 .collage-photo--3 {
@@ -1878,6 +1886,11 @@ a {
     width: 68%;
     height: 268px;
     transform: rotate(-2deg);
+  }
+
+  .life-widget--cluster .collage-photo--1 {
+    width: 82%;
+    height: 205px;
   }
 
   .collage-photo--2,

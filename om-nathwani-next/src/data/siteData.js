@@ -120,8 +120,8 @@ export const lifeItems = [
     layout: "cluster",
     images: [
       {
-        src: "/images/lazsoc/100_1230.JPG",
-        alt: "Friends at a Lazaridis Students' Society event",
+        src: "/images/lazsoc/IMG_6227-web.jpg",
+        alt: "The LAZSOC team assembled for a formal group portrait",
       },
       {
         src: "/images/lazsoc/IMG_5839.JPG",
